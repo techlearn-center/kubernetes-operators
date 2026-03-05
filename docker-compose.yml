@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  kind-cluster:
+    image: kindest/node:v1.29.0
+    container_name: kind-control-plane
+    privileged: true
+    ports:
+      - "6443:6443"
+      - "30000-30100:30000-30100"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
